@@ -109,7 +109,7 @@
 			return bprintf("%juh %jum", h, m);
 		}
 
-		return "";
+		return "--:--";
 	}
 #elif defined(__OpenBSD__)
 	#include <fcntl.h>

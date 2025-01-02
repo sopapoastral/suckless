@@ -8,7 +8,8 @@
 #define VOL_BUF_SIZE 5
 
 const char *
-alsa_master_vol(void)
+// alsa_master_vol(void)
+alsa_master_vol(const char * unused)
 {
 	bool MASTER_IS_MUTED = true;
 	char tmp_buf[TMP_BUF_SIZE];
