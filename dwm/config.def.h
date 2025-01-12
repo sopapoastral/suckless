@@ -58,7 +58,8 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "", "󰈹", "󰭹", "󰉋", "", "󰥠", "", "", "" };
+// static const char *tags[] = { "", "󰈹", "󰭹", "󰉋", "", "󰥠", "", "", "" };
+static const char *tags[] = { "", "󰖟", "󰭹", "󰉋", "", "󰥠", "", "", "" };
 
 /*Underline focus parameters*/
 static const unsigned int ulinepad	= 0;	    /* horizontal padding between the underline and tag */
@@ -139,7 +140,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_i,         incnmaster,     {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_d,         incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,         setmfact,       {.f = -0.05} },
-	{ MODKEY,                       XK_l,         setmfact,       {.f = +0.05} },
+    { MODKEY,                       XK_l,         setmfact,       {.f = +0.05} },
 	{ MODKEY|ShiftMask,             XK_h,         setcfact,       {.f = +0.25} },
 	{ MODKEY|ShiftMask,             XK_l,         setcfact,       {.f = -0.25} },
 	{ MODKEY|ShiftMask,             XK_o,         setcfact,       {.f =  0.00} },
@@ -162,10 +163,12 @@ static const Key keys[] = {
 	{ MODKEY|Mod4Mask|ShiftMask,    XK_0,         defaultgaps,    {0} },
 	{ MODKEY,                       XK_Tab,       view,           {0} },
 	{ MODKEY,                       XK_q,         killclient,     {0} },
+	{ MODKEY,                       XK_u,         setlayout,      {.v = &layouts[10]} },
+	{ MODKEY,                       XK_y,         setlayout,      {.v = &layouts[3]} },
 	{ MODKEY,                       XK_t,         setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_r,         setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                       XK_e,         setlayout,      {.v = &layouts[11]} },
-	{ MODKEY,                       XK_space,     setlayout,      {0} },
+	{ MODKEY,                       XK_space,     setlayout,      {.v = &layouts[1]} },
 	{ MODKEY|ShiftMask,             XK_space,     togglefloating, {0} },
 	{ MODKEY,                       XK_0,         view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,         tag,            {.ui = ~0 } },
