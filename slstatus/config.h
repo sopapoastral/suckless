@@ -1,5 +1,4 @@
 /* See LICENSE file for copyright and license details. */
-#include <string.h>
 
 /* interval between updates (in ms) */
 const unsigned int interval = 1000;
@@ -67,17 +66,19 @@ static const char unknown_str[] = "n/a";
  */
 
 const char*
-alsa_master_vol_wrapper(const char* unused)
+alsa_master_vol_wrapper(const char * unused)
 {
-    (void)unused;
-    return alsa_master_vol();
+	(void)unused;
+	return alsa_master_vol();
 }
 
-int parse_int(const char* perc)
+int
+parse_int(const char* perc)
 {
     int res = 0;
 
-    for (int i = 0; *(perc + i); ++i) {
+    for(int i = 0; *(perc + i); ++i)
+    {
         res *= 10;
         res += (*(perc + i) - '0');
     }
@@ -89,7 +90,8 @@ const char*
 returnBatterySymbol()
 {
     int perc = parse_int(battery_perc("BAT0"));
-    if (battery_state("BAT0") != "+") {
+    if (battery_state("BAT0") != "+" && battery_state("BAT0") != "o")
+    {
         if (perc > 90)
             return "󰁹";
         if (perc > 80)
@@ -110,7 +112,9 @@ returnBatterySymbol()
             return "󰁻";
         if (perc > 0)
             return "󰁺";
-    } else {
+    }
+    else
+    {
         if (perc == 100)
             return "󱈏";
         if (perc > 90)
@@ -133,29 +137,17 @@ returnBatterySymbol()
             return "󰂆";
         if (perc > 0)
             return "󰢜";
+
     }
 }
 
-const char*
-battery_remaining_wrapper()
-{
-    const char* charging = "--:--";
-    const char* res = battery_remaining("BAT0");
-
-    // if (!strcmp(res, ""))
-    //     return charging;
-
-    return res;
-}
-
 static const struct arg args[] = {
-    /* function 	    format          			       argument */
-    { battery_remaining_wrapper, "^c#67bc9c^󱎫 ^c#e0def4^%s ", NULL },
-    { returnBatterySymbol, "^c#67bc9c^%s ", NULL },
-    { battery_perc, "^c#e0def4^%s% ^c#ebbcba^│ ", "BAT0" },
-    { run_command, "^c#9ccfd8^󰏖 ^c#e0def4^%s ^c#ebbcba^│ ", "checkupdates | wc -l", NULL },
-    { alsa_master_vol_wrapper, "^c#82a0d8^󱄠 ^c#e0def4^%s ^c#ebbcba^│ ", NULL },
-    { cpu_perc, "^c#ebbcba^󰍛 %s%% ", NULL },
-    { ram_used, "^c#c4a7e7^ %s ^c#ebbcba^│ ", NULL },
-    { datetime, "^c#f6c177^%s", "^c#f6c177^󰃰 ^c#e0def4^%b %d ^c#f6c177^󱦟 ^c#e0def4^%k:%M " },
+	/* function 	    format          			       argument */
+    { returnBatterySymbol, "^c#67bc9c^%s "                            , NULL },
+	{ battery_perc		 , "^c#e0def4^%s% ^c#ebbcba^│ "				  , "BAT0" },
+	{ run_command     	 , "^c#9ccfd8^󰏖 ^c#e0def4^%s ^c#ebbcba^│ "    ,   "checkupdates | wc -l",  NULL },
+	{ alsa_master_vol_wrapper, "^c#82a0d8^󱄠 ^c#e0def4^%s ^c#ebbcba^│ ",   NULL    },
+	{ cpu_perc        	 , "^c#ebbcba^󰍛 %s%% "                        ,   NULL    },
+	{ ram_used        	 , "^c#c4a7e7^ %s ^c#ebbcba^│ "              ,   NULL    },
+	{ datetime        	 , "^c#f6c177^%s"                             ,   "^c#f6c177^󰃰 ^c#e0def4^%b %d ^c#f6c177^󱦟 ^c#e0def4^%k:%M "  },
 };

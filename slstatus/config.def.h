@@ -90,7 +90,7 @@ const char*
 returnBatterySymbol()
 {
     int perc = parse_int(battery_perc("BAT0"));
-    if (battery_state("BAT0") != "+")
+    if (battery_state("BAT0") != "+" && battery_state("BAT0") != "o")
     {
         if (perc > 90)
             return "󰁹";
