@@ -143,6 +143,7 @@ returnBatterySymbol()
 
 static const struct arg args[] = {
 	/* function 	    format          			       argument */
+    { battery_remaining  , "^c#67bc9c^󰔛 ^c#e0def4^%s "                , "BAT0"},
     { returnBatterySymbol, "^c#67bc9c^%s "                            , NULL },
 	{ battery_perc		 , "^c#e0def4^%s% ^c#ebbcba^│ "				  , "BAT0" },
 	{ run_command     	 , "^c#9ccfd8^󰏖 ^c#e0def4^%s ^c#ebbcba^│ "    ,   "checkupdates | wc -l",  NULL },
