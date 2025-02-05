@@ -143,12 +143,15 @@ returnBatterySymbol()
 
 static const struct arg args[] = {
 	/* function 	    format          			       argument */
-    { battery_remaining  , "^c#67bc9c^󰔛 ^c#e0def4^%s "                , "BAT0"},
-    { returnBatterySymbol, "^c#67bc9c^%s "                            , NULL },
-	{ battery_perc		 , "^c#e0def4^%s% ^c#ebbcba^│ "				  , "BAT0" },
-	{ run_command     	 , "^c#9ccfd8^󰏖 ^c#e0def4^%s ^c#ebbcba^│ "    ,   "checkupdates | wc -l",  NULL },
-	{ alsa_master_vol_wrapper, "^c#82a0d8^󱄠 ^c#e0def4^%s ^c#ebbcba^│ ",   NULL    },
-	{ cpu_perc        	 , "^c#ebbcba^󰍛 %s%% "                        ,   NULL    },
-	{ ram_used        	 , "^c#c4a7e7^ %s ^c#ebbcba^│ "              ,   NULL    },
-	{ datetime        	 , "^c#f6c177^%s"                             ,   "^c#f6c177^󰃰 ^c#e0def4^%b %d ^c#f6c177^󱦟 ^c#e0def4^%k:%M "  },
+    { battery_remaining      , "^c#67bc9c^󰔛 ^c#e0def4^%s "                , "BAT0" },
+    { returnBatterySymbol    , "^c#67bc9c^%s "                            , NULL   },
+	{ battery_perc		     , "^c#e0def4^%s% ^c#ebbcba^│ "				  , "BAT0" },
+	{ run_command     	     , "^c#9ccfd8^󰏖 ^c#e0def4^%s ^c#ebbcba^│ "    , "checkupdates | wc -l",  NULL },
+	{ alsa_master_vol_wrapper, "^c#82a0d8^󱄠 ^c#e0def4^%s ^c#ebbcba^│ "    , NULL     },
+	{ temp                   , "^c#ebbcba^ ^c#e0def4^%sºC "              , "/sys/class/thermal/thermal_zone0/temp" },
+	{ cpu_perc        	     , "^c#ebbcba^󰍛 ^c#e0def4^%s%% "              , NULL     },
+	{ ram_used        	     , "^c#c4a7e7^ ^c#e0def4^%s ^c#ebbcba^│ "    , NULL     },
+	{ datetime        	     , "^c#f6c177^%s ^c#ebbcba^│ "                , "^c#f6c177^󰃰 ^c#e0def4^%b %d ^c#f6c177^󱦟 ^c#e0def4^%k:%M "  },
+    { ipv4                   , "^c#82a0d8^ ^c#e0def4^%s "                , "wlan0" },
+    { wifi_essid             , "^c#82a0d8^ ^c#e0def4^%s"                 , "wlan0" },
 };
