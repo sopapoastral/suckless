@@ -192,6 +192,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_b,         spawn,          SHCMD("~/.local/bin/backlight") },
 	{ MODKEY|ShiftMask,             XK_s,         spawn,          SHCMD("~/.local/bin/screenshot") },
 	{ MODKEY|ShiftMask,             XK_l,         spawn,          SHCMD("~/.local/bin/language") },
+	{ MODKEY|ControlMask|ShiftMask, XK_s,         spawn,          SHCMD("flameshot gui") },
 };
 
 /* button definitions */
