@@ -21,7 +21,11 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const int user_bh            = 15;        /* 2 is the defauls spacing around the bar's font */
 
 /*Fonts*/
-static const char *fonts[]          = { "SymbolsNerdFont:size=12:antialias=true", "Mononoki Nerd Font Mono:size=13:antialias=true", "Noto Sans CJK JP:size=12:antialias=true" };
+static const char *fonts[]          = {
+                                        "SymbolsNerdFont:size=12:antialias=true",
+                                        "Mononoki Nerd Font Mono:size=13:antialias=true",
+                                        "Noto Sans CJK JP:size=12:antialias=true",
+                                      };
 static const char dmenufont[]       = "Mononoki Nerd Font Mono:size=13";
 
 /* Rose Pine Colors*/
