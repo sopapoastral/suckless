@@ -146,7 +146,7 @@ static const struct arg args[] = {
     { battery_remaining      , "^c#67bc9c^󰔛 ^c#e0def4^%s "                , "BAT0"                                                      },
     { returnBatterySymbol    , "^c#67bc9c^%s "                            , NULL                                                        },
 	{ battery_perc		     , "^c#e0def4^%s% ^c#ebbcba^│ "				  , "BAT0"                                                      },
-	{ run_command     	     , "^c#9ccfd8^󰏖 ^c#e0def4^%s ^c#ebbcba^│ "    , "checkupdates | wc -l",  NULL                               },
+	// { run_command     	     , "^c#9ccfd8^󰏖 ^c#e0def4^%s ^c#ebbcba^│ "    , "sudo checkupdates | wc -l",  NULL                          },
 	{ alsa_master_vol_wrapper, "^c#82a0d8^󱄠 ^c#e0def4^%s ^c#ebbcba^│ "    , NULL                                                        },
 	{ temp                   , "^c#ebbcba^ ^c#e0def4^%sºC "              , "/sys/class/thermal/thermal_zone0/temp"                     },
 	{ cpu_perc        	     , "^c#ebbcba^󰍛 ^c#e0def4^%s%% "              , NULL                                                        },
