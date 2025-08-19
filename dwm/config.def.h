@@ -188,6 +188,7 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_9,                          8)
 	{ MODKEY|ShiftMask,             XK_BackSpace, quit,           {0} },
 	{ MODKEY|ControlMask|ShiftMask, XK_q,         quit,           {1} },
+	{ Mod4Mask        ,             XK_period,    spawn,          SHCMD("~/.local/bin/emoji") },
 	{ MODKEY|ShiftMask,             XK_s,         spawn,          SHCMD("~/.local/bin/sysstate") },
 	{ MODKEY|ShiftMask,             XK_v,         spawn,          SHCMD("~/.local/bin/volume") },
 	{ MODKEY|ShiftMask,             XK_b,         spawn,          SHCMD("~/.local/bin/backlight") },

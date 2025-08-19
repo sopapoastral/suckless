@@ -21,11 +21,7 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const int user_bh            = 15;        /* 2 is the defauls spacing around the bar's font */
 
 /*Fonts*/
-static const char *fonts[]          = {
-                                        "SymbolsNerdFont:size=12:antialias=true",
-                                        "Mononoki Nerd Font Mono:size=13:antialias=true",
-                                        "Noto Sans CJK JP:size=12:antialias=true",
-                                      };
+static const char *fonts[]          = { "SymbolsNerdFont:size=12:antialias=true", "Mononoki Nerd Font Mono:size=13:antialias=true", "Noto Sans CJK JP:size=12:antialias=true" };
 static const char dmenufont[]       = "Mononoki Nerd Font Mono:size=13";
 
 /* Rose Pine Colors*/
@@ -147,7 +143,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_h,         setmfact,       {.f = -0.05} },
     { MODKEY,                       XK_l,         setmfact,       {.f = +0.05} },
 	{ MODKEY|ShiftMask,             XK_h,         setcfact,       {.f = +0.25} },
-	{ MODKEY|ShiftMask,             XK_l,         setcfact,       {.f = -0.25} },
+	{ MODKEY|ShiftMask|ControlMask, XK_l,         setcfact,       {.f = -0.25} },
 	{ MODKEY|ShiftMask,             XK_o,         setcfact,       {.f =  0.00} },
 	{ MODKEY|ShiftMask,             XK_Return,    zoom,           {0} },
 	{ MODKEY|Mod4Mask,              XK_u,         incrgaps,       {.i = +1 } },
@@ -192,6 +188,7 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_9,                          8)
 	{ MODKEY|ShiftMask,             XK_BackSpace, quit,           {0} },
 	{ MODKEY|ControlMask|ShiftMask, XK_q,         quit,           {1} },
+	{ Mod4Mask        ,             XK_period,    spawn,          SHCMD("~/.local/bin/emoji") },
 	{ MODKEY|ShiftMask,             XK_s,         spawn,          SHCMD("~/.local/bin/sysstate") },
 	{ MODKEY|ShiftMask,             XK_v,         spawn,          SHCMD("~/.local/bin/volume") },
 	{ MODKEY|ShiftMask,             XK_b,         spawn,          SHCMD("~/.local/bin/backlight") },
